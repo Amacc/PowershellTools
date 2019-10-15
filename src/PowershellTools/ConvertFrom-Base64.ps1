@@ -1,11 +1,22 @@
 Function ConvertFrom-Base64 {
+    <#
+        .SYNOPSIS
+        Decode Base64 encoded string
+
+        .DESCRIPTION
+        Helper function to manage base64 encoded strings
+    #>
     [cmdletbinding()]param(
+        [Parameter(ValueFromRemainingArguments)]
+        [string] $Input,
         [Parameter(ValueFromPipeline)]
-        [string] $Input
+        [string] $PipelineInput
     )
+    begin {
+        if($Input){ return $Input | ConvertFrom-Base64 }
+    }
     process {
-        Write-Verbose $Input
-        [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String($Input))
+        [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String($PipelineInput))
     }
 }
 
