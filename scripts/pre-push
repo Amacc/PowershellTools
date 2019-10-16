@@ -1,0 +1,4 @@
+#!/bin/sh
+current_branch=`git branch | grep '*' | sed 's/* //'`
+echo Running test before push to $current_branch
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\scripts\Test.ps1"
