@@ -5,6 +5,10 @@ Function ConvertFrom-Base64 {
 
         .DESCRIPTION
         Helper function to manage base64 encoded strings
+
+        .EXAMPLE
+        "Foo" | ConvertFrom-Base64
+        >> "Zm9v"
     #>
     [cmdletbinding()]param(
         [Parameter(ValueFromRemainingArguments)]
