@@ -13,7 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- powershell: Install-Module Pester -Scope CurrentUser
+- powershell: Install-Module Pester -Scope CurrentUser -Force
   displayName: 'Install Pester for testing'
 
 - powershell: ./scripts/Test.ps1
