@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot/../PowershellTools/PowershellTools.psm1
+Import-Module $PSScriptRoot/../PowershellTools/PowershellTools.psd1
 
 Describe 'ConvertTo-Base64' {
     it "returns a base64 encoded string based on the given input" {
