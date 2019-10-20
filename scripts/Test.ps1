@@ -1,4 +1,4 @@
-#Requires -Module @{ModuleName="Pester";ModuleVersion=4.9.0}
+#Requires -Module Pester
 
 Get-ChildItem .\src\*.Test\ -r |
     ForEach-Object { & $_.FullName }
