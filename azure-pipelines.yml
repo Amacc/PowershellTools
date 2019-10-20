@@ -13,5 +13,5 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- powershell: ./scripts/test.ps1
+- powershell: ./scripts/Test.ps1
   displayName: 'Run Tests'
