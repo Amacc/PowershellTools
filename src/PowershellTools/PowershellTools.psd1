@@ -29,7 +29,7 @@
     Copyright         = '(c) 2019 almcc. All rights reserved.'
 
     # Description of the functionality provided by this module
-    # Description = ''
+    Description = 'Collection of assorted powershell utility functions.'
 
     # Minimum version of the Windows PowerShell engine required by this module
     # PowerShellVersion = ''
@@ -106,7 +106,7 @@
             # LicenseUri = ''
 
             # A URL to the main website for this project.
-            # ProjectUri = ''
+            ProjectUri = 'https://github.com/Amacc/PowershellTools'
 
             # A URL to an icon representing this module.
             # IconUri = ''
