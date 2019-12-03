@@ -20,7 +20,7 @@
     GUID              = '48f75b81-4380-472e-9d58-2e1275eeae8a'
 
     # Author of this module
-    Author            = 'almcc'
+    Author            = 'amacc'
 
     # Company or vendor of this module
     CompanyName       = 'Unknown'
