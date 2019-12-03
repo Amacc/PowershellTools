@@ -70,7 +70,10 @@
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
     FunctionsToExport = @(
         # ConversionFunctions
-        "ConvertFrom-Base64", "ConvertTo-Base64", "New-EmptyFile"
+        "ConvertFrom-Base64", "ConvertTo-Base64", "New-EmptyFile",
+
+        # INI File Functions
+        "Out-IniFile", "Out-TOML", "Out-KVPString"
     )
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
