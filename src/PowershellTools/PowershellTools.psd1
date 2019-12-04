@@ -11,7 +11,7 @@
     RootModule        = 'PowershellTools.psm1'
 
     # Version number of this module.
-    ModuleVersion     = '1.0'
+    ModuleVersion     = '1.1'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -73,7 +73,7 @@
         "ConvertFrom-Base64", "ConvertTo-Base64", "New-EmptyFile",
 
         # INI File Functions
-        "Out-IniFile", "Out-TOML", "Out-KVPString"
+        "Out-IniFile", "Out-INI", "Out-KVPString"
     )
 
     # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.

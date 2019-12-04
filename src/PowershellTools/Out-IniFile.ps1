@@ -7,7 +7,7 @@ function Out-KVPString {
     process {"$Name$Seperator$Value" }
 }
 
-Function Out-TOML{
+Function Out-INI{
     param(
         [Parameter(ValueFromPipelineByPropertyName)][string] $Name,
         [Parameter(ValueFromPipelineByPropertyName)][hashtable] $Value
@@ -38,8 +38,8 @@ Function Out-IniFile {
     .Example
 
         $NewINIContent = @{
-            “Category1”=@{“Key1”=”Value1”;”Key2”=”Value2”}
-            ”Category2”=@{“Key1”=”Value1”;”Key2”=”Value2”}
+            "Category1"=@{"Key1"="Value1";"Key2"="Value2"}
+            "Category2"=@{"Key1"="Value1";"Key2"="Value2"}
         }
         Out-IniFile -InputObject $NewINIContent -FilePath testfile.ini
         -----------
@@ -53,27 +53,28 @@ Function Out-IniFile {
     [CmdletBinding()]
     param(
         [ValidateNotNullOrEmpty()]
+        [Parameter(ValueFromPipeline = $True, Mandatory = $True)]
+        [Hashtable]$InputObject,
+
+        [ValidateNotNullOrEmpty()]
         [Parameter(Mandatory = $True)]
         [string] $FilePath,
-        [switch] $Append,
 
         [Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding]
         $Encoding = [Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding]::Ascii,
 
-        [ValidateNotNullOrEmpty()]
-        [Parameter(ValueFromPipeline = $True, Mandatory = $True)]
-        [Hashtable]$InputObject
+        [switch] $Append
     )
     process {
         if(( -not $Append ) -and ( Test-Path $FilePath )){
             Throw "File Exists and not set to append"
         }
         $InputObject.GetEnumerator() |    # Split the input item by key value pairs
-            Out-TOML |
+            Out-INI |
             Foreach-Object {              # Write the emitted strings to file
                 Add-Content -Path $FilePath -Value $_
             }
     }
 }
 
-Export-ModuleMember -Function Out-IniFile, Out-TOML, Out-KVPString
+Export-ModuleMember -Function Out-IniFile, Out-INI, Out-KVPString
