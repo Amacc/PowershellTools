@@ -71,9 +71,7 @@ Function Out-IniFile {
         }
         $InputObject.GetEnumerator() |    # Split the input item by key value pairs
             Out-INI |
-            Foreach-Object {              # Write the emitted strings to file
-                Add-Content -Path $FilePath -Value $_
-            }
+            Add-Content -Path $FilePath -Encoding $Encoding
     }
 }
 
