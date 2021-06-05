@@ -16,7 +16,7 @@ jobs:
     - name: Powershell Version
       run: $psversiontable
 
-      - name: Publish to PSGallery
+    - name: Publish to PSGallery
       run: Publish-Module -Path .\src\PowershellTools -NuGetApiKey $env:NUGET_API_KEY
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
